@@ -1,0 +1,173 @@
+<style>
+.services {
+  background: white;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.services-header h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.services-header p {
+  color: #666;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.service-card {
+  position: relative;
+  padding: 30px;
+  border-radius: 14px;
+  background: #f9fafb;
+  transition: 0.3s;
+  border-left: 4px solid #39AEF4;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  background: white;
+}
+
+.service-card h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.service-card p {
+  font-size: 15px;
+  color: #555;
+}
+
+/* ---------- HEADER ANIMATION ---------- */
+
+.services-header {
+  text-align: center;
+  margin-bottom: 60px;
+
+  opacity: 0;
+  transform: translateY(40px) rotate(-6deg);
+  transition: 0.8s cubic-bezier(.22,.61,.36,1);
+}
+
+.services-header.visible {
+  opacity: 1;
+  transform: translateY(0) rotate(0);
+}
+
+
+/* ---------- CARDS ANIMATION ---------- */
+
+.service-card {
+  position: relative;
+  padding: 30px;
+  border-radius: 14px;
+  background: #f9fafb;
+  transition: 0.4s ease;
+  border-left: 4px solid #39AEF4;
+
+  opacity: 0;
+  transform: translateY(40px) scale(0.92);
+}
+
+.service-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+
+/* stagger timing */
+.service-card:nth-child(2) { transition-delay: 0.1s; }
+.service-card:nth-child(3) { transition-delay: 0.2s; }
+.service-card:nth-child(4) { transition-delay: 0.3s; }
+.service-card:nth-child(5) { transition-delay: 0.4s; }
+.service-card:nth-child(6) { transition-delay: 0.5s; }
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+}
+</style>
+
+<section class="section-small services">
+
+  <div class="container">
+
+    <div class="services-header">
+      <h2>Our Plastering & Rendering Services</h2>
+      <p>High-quality workmanship tailored to your needs.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <h4>Skimming & Re-Plastering</h4>
+        <p>Smooth finishes for walls and ceilings to transform interiors.</p>
+      </div>
+
+      <div class="service-card">
+        <h4>Patch Repairs</h4>
+        <p>Professional repairs to restore damaged plaster surfaces.</p>
+      </div>
+
+      <div class="service-card">
+        <h4>Ceiling Work</h4>
+        <p>Ceiling plastering and repairs with flawless results.</p>
+      </div>
+
+      <div class="service-card">
+        <h4>Internal Wall Plastering</h4>
+        <p>Durable and smooth finishes for residential spaces.</p>
+      </div>
+
+      <div class="service-card">
+        <h4>Small Renovation Jobs</h4>
+        <p>Reliable plastering solutions for renovation projects.</p>
+      </div>
+
+      <div class="service-card">
+        <h4>Rendering Services</h4>
+        <p>External rendering for protection and modern appearance.</p>
+      </div>
+
+    </div>
+
+<div style="text-align:center; margin-top:50px;">
+  <a href="/services" class="btn-primary">Learn More</a>
+</div>
+
+  </div>
+
+</section>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.services-header, .service-card')
+    .forEach(el => observer.observe(el));
+</script>

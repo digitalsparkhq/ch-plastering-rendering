@@ -1,0 +1,124 @@
+<style>
+.hero {
+  position: relative;
+  height: 85vh;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  filter: grayscale(100%) contrast(1.05) brightness(0.85);
+  opacity: 0;
+  transition: opacity 1.5s ease, transform 6s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.hero-text {
+  color: white;
+  max-width: 600px;
+
+  opacity: 0;
+  transform: translateY(40px);
+  animation: heroFloat 1s cubic-bezier(.22,.61,.36,1) forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes heroFloat {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-text h1 {
+  font-size: 52px;
+  margin-bottom: 20px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.hero-text .btn-primary {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroFloat 1s cubic-bezier(.22,.61,.36,1) forwards;
+  animation-delay: 0.6s;
+}
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+    height: auto;
+    min-height: 500px;
+    padding: 80px 0;
+  }
+
+  .hero-text {
+    text-align: center;
+    margin: auto;
+  }
+
+}
+</style>
+
+<section class="hero">
+
+  <div class="hero-slide active" style="background-image:url('/images/hero1.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('/images/hero2.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('/images/hero3.jpg')"></div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content container">
+    <div class="hero-text">
+      <h1>Professional Plastering & Rendering in Pontefract</h1>
+      <p>High-quality finishes for homes with reliable service you can trust.</p>
+      <a class="btn-primary" href="#">Get a Free Quote</a>
+    </div>
+  </div>
+
+</section>
+
+<script>
+  const slides = document.querySelectorAll('.hero-slide');
+  let current = 0;
+
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 5000);
+</script>

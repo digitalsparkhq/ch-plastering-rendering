@@ -1,0 +1,141 @@
+<style>
+.wrapper {
+  margin-top: -90px;
+  position: relative;
+  z-index: 20;
+}
+
+.cards {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  gap: 25px;
+  padding: 0 20px;
+}
+
+.card {
+  flex: 1;
+  background: white;
+  padding: 35px 25px;
+  border-radius: 18px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.card h4 {
+  margin-top: 15px;
+  font-size: 19px;
+  color: #111;
+}
+
+.card p {
+  font-size: 15px;
+  color: #555;
+}
+
+.icon {
+  width: 65px;
+  height: 65px;
+  background: #39AEF4;
+  border-radius: 50%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
+
+.card {
+  flex: 1;
+  background: white;
+  padding: 35px 25px;
+  border-radius: 18px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(60px);
+  animation: riseUp 0.8s ease forwards;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes riseUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .cards {
+    flex-direction: column;
+  }
+
+  .wrapper {
+    margin-top: -40px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .wrapper {
+    margin-top: -40px;
+  }
+
+  .cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+}
+</style>
+
+<div class="wrapper">
+  <div class="cards">
+
+    <div class="card">
+  <div class="icon">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 2l7 4v6c0 5-3.5 9.5-7 10-3.5-.5-7-5-7-10V6l7-4zm-1 11l-2-2-1.4 1.4L11 15.8l5.4-5.4L15 9l-4 4z"/>
+    </svg>
+  </div>
+  <h4>Quality Workmanship</h4>
+  <p>Professional finishes using premium materials.</p>
+</div>
+
+
+<div class="card">
+  <div class="icon">
+    <svg viewBox="0 0 24 24">
+      <path d="M16 11c1.66 0 3-1.34 3-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.93 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+    </svg>
+  </div>
+  <h4>Experienced Team</h4>
+  <p>Years of experience delivering reliable results.</p>
+</div>
+
+
+<div class="card">
+  <div class="icon">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 1a5 5 0 00-5 5v1H5v4h2v9h10v-9h2V7h-2V6a5 5 0 00-5-5zm3 6H9V6a3 3 0 016 0v1zm-3 3a2 2 0 110 4 2 2 0 010-4z"/>
+    </svg>
+  </div>
+  <h4>Competitive Prices</h4>
+  <p>Affordable solutions tailored to your needs.</p>
+</div>
+
+  </div>
+</div>

@@ -1,0 +1,163 @@
+<style>
+.about {
+  padding-top: 40px;
+  padding-bottom: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.about img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.about-image {
+  background: #ede8e8;
+  padding: 18px;
+  border-radius: 16px;
+  position: relative;
+  display: inline-block;
+}
+
+/* subtle offset accent */
+.about-image::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border: 2px solid #ede8e8;
+  border-radius: 18px;
+  z-index: -1;
+}
+
+.about-image img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.about h2 {
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+}
+
+.stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.stat h3 {
+  font-size: 32px;
+  color: #39AEF4;
+}
+
+.stat p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .stats {
+    justify-content: space-between;
+  }
+
+}
+</style>
+
+<section class="section-small about">
+  <div class="container about-grid">
+
+    <div class="about-image">
+  <img src="/images/about.jpg" alt="About">
+</div>
+
+    <div>
+      <h2>Trusted Plastering Specialists in Pontefract</h2>
+
+      <p>
+        We provide high-quality plastering and rendering services for homes,
+        delivering smooth finishes and long-lasting results.
+      </p>
+
+      <div class="stats">
+
+  <div class="stat">
+    <h3><span class="counter" data-target="10">0</span>+</h3>
+    <p>Years Experience</p>
+  </div>
+
+  <div class="stat">
+    <h3><span class="counter" data-target="250">0</span>+</h3>
+    <p>Projects Completed</p>
+  </div>
+
+  <div class="stat">
+    <h3><span class="counter" data-target="100">0</span>%</h3>
+    <p>Customer Satisfaction</p>
+  </div>
+
+</div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const counters = document.querySelectorAll('.counter');
+
+  const startCounters = () => {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      let count = 0;
+
+      const update = () => {
+        const increment = target / 60;
+
+        if (count < target) {
+          count += increment;
+          counter.innerText = Math.ceil(count);
+          requestAnimationFrame(update);
+        } else {
+          counter.innerText = target;
+        }
+      };
+
+      update();
+    });
+  };
+
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      startCounters();
+      observer.disconnect();
+    }
+  });
+
+  observer.observe(document.querySelector('.stats'));
+</script>

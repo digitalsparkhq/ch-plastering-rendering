@@ -1,0 +1,251 @@
+<style>
+.footer {
+  background: #f8f6f2;
+  position: relative;
+  padding: 90px 0 40px;
+  overflow: hidden;
+}
+
+/* plaster wave texture */
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='600' height='600' viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 300 Q150 250 300 300 T600 300 V600 H0 Z' fill='%23dcd8d0' fill-opacity='0.25'/%3E%3C/svg%3E");
+  background-size: 600px;
+  background-repeat: repeat;
+  pointer-events: none;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.footer h4 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #111;
+}
+
+.footer p,
+.footer a {
+  font-size: 15px;
+  color: #444;
+  text-decoration: none;
+  line-height: 1.8;
+}
+
+/* logo */
+.footer-logo img {
+  height: 70px;
+  margin-bottom: 20px;
+}
+
+/* link arrows */
+.footer-links a::before {
+  content: ">";
+  margin-right: 10px;
+  color: #39aef4;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  color: #39aef4;
+}
+
+/* contact icons */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.contact-item svg {
+  width: 18px;
+  height: 18px;
+  fill: #39aef4;
+}
+
+/* bottom bar */
+.footer-bottom {
+  margin-top: 60px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* social icons */
+.footer-social {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-social a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(57,174,244,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.footer-social svg {
+  width: 18px;
+  height: 18px;
+  fill: #39aef4;
+}
+
+.footer-social a:hover {
+  background: #39aef4;
+}
+
+.footer-social a:hover svg {
+  fill: white;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .footer-grid > div {
+    text-align: center;
+  }
+
+  .footer-logo {
+    justify-content: center;
+    display: flex;
+  }
+
+  .contact-item {
+    justify-content: center;
+  }
+
+}
+</style>
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <!-- LOGO + ABOUT -->
+      <div>
+        <div class="footer-logo">
+          <img src="/images/logo.png" alt="C H Plastering & Rendering">
+        </div>
+        <p>
+          Trusted domestic plastering specialists in Pontefract delivering
+          smooth finishes and reliable workmanship for homes.
+        </p>
+      </div>
+
+      <!-- QUICK LINKS (shifted right) -->
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <p><a href="/">Home</a></p>
+        <p><a href="/about">About</a></p>
+        <p><a href="/services">Services</a></p>
+        <p><a href="/gallery">Gallery</a></p>
+        <p><a href="/contact">Contact</a></p>
+      </div>
+
+      <!-- CONTACT (shifted middle) -->
+      <div>
+        <h4>Contact</h4>
+
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          </svg>
+          Pontefract, United Kingdom
+        </div>
+
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24">
+            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.12.45 2.33.69 3.48.69a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.34a1 1 0 011 1c0 1.15.24 2.36.69 3.48a1 1 0 01-.21 1.11l-2.2 2.2z"/>
+          </svg>
+          07930 611236
+        </div>
+
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 4H4a2 2 0 00-2 2v.01L12 13l10-6.99V6a2 2 0 00-2-2z"/>
+            <path d="M22 8.99l-10 7L2 8.99V18a2 2 0 002 2h16a2 2 0 002-2V8.99z"/>
+          </svg>
+          info@chplasteringrendering.co.uk
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+
+      <div>
+        © 2026 C H Plastering & Rendering | Designed by Digital Spark HQ
+      </div>
+
+      <div class="footer-social">
+
+        <a href="#">
+          <svg viewBox="0 0 24 24">
+            <path d="M22 12a10 10 0 10-11.5 9.95v-7.04H8v-2.91h2.5V9.41c0-2.47 1.47-3.84 3.72-3.84 1.08 0 2.21.19 2.21.19v2.43h-1.25c-1.23 0-1.62.76-1.62 1.54v1.85H16l-.4 2.91h-2.02V22A10 10 0 0022 12z"/>
+          </svg>
+        </a>
+
+        <a href="#">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.67 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.25-.15-4.77-1.69-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.15-3.23 1.67-4.77 4.92-4.92C8.42 2.17 8.8 2.16 12 2.16zm0 3.24a6.6 6.6 0 100 13.2 6.6 6.6 0 000-13.2zm0 10.9a4.3 4.3 0 110-8.6 4.3 4.3 0 010 8.6zm6.88-11.24a1.54 1.54 0 11-3.08 0 1.54 1.54 0 013.08 0z"/>
+          </svg>
+        </a>
+
+        <a href="https://wa.me/447XXXXXXXXX" target="_blank">
+  <svg viewBox="0 0 24 24">
+    <path d="M12.04 2C6.52 2 2.04 6.48 2.04 12c0 1.94.5 3.82 1.46 5.5L2 22l4.63-1.45A9.93 9.93 0 0012.04 22c5.52 0 10-4.48 10-10S17.56 2 12.04 2zm0 18.2c-1.67 0-3.3-.45-4.72-1.3l-.34-.2-2.75.86.9-2.68-.22-.35a8.14 8.14 0 01-1.26-4.32c0-4.5 3.66-8.16 8.16-8.16s8.16 3.66 8.16 8.16-3.66 8.16-8.16 8.16zm4.49-6.13c-.25-.12-1.47-.72-1.7-.8-.23-.08-.4-.12-.57.12-.17.25-.65.8-.8.97-.15.17-.3.18-.55.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.3.37-.45.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.57-1.38-.78-1.89-.21-.5-.42-.43-.57-.44l-.49-.01c-.17 0-.45.06-.68.31-.23.25-.9.88-.9 2.14s.92 2.48 1.05 2.65c.12.17 1.8 2.74 4.36 3.84.61.26 1.09.42 1.46.54.61.19 1.16.16 1.6.1.49-.07 1.47-.6 1.68-1.17.21-.57.21-1.06.15-1.17-.06-.11-.23-.17-.49-.29z"/>
+  </svg>
+</a>
+
+      </div>
+
+    </div>
+
+  </div>
+</footer>

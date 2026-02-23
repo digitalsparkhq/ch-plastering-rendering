@@ -1,0 +1,425 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #1f2933;
+  line-height: 1.6;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+/* Container */
+.container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #39AEF4;
+  color: #ffffff;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* hover */
+.btn-primary:hover {
+  background: #1f8ed1;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(57,174,244,0.35);
+}
+
+.menu .btn-primary:hover {
+  color: #ffffff !important;
+}
+
+/* Topbar */
+.topbar {
+  background: #1f2933;
+  color: white;
+  font-size: 14px;
+}
+
+.topbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+}
+
+.nav-link.active {
+  color: #39AEF4;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+.topbar-left {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: white;
+  text-decoration: none;
+}
+
+.contact-link svg {
+  width: 16px;
+  height: 16px;
+  fill: #39AEF4;
+}
+
+.topbar-right {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(57,174,244,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.social-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: #39AEF4;
+}
+
+.social-icon:hover {
+  background: #39AEF4;
+}
+
+.social-icon:hover svg {
+  fill: white;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+}
+
+.logo img {
+  height: 70px;
+  width: auto;
+  display: block;
+  filter: contrast(1.2);
+}
+
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #1f2933;
+  font-weight: 500;
+  font-size: 15px;
+  position: relative;
+  padding-bottom: 4px;
+  transition: 0.3s;
+}
+
+/* hover text effect */
+.menu a:hover {
+  color: #39AEF4;
+  transform: translateY(-1px);
+}
+
+/* hover underline */
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #39AEF4;
+  transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+.menu .btn-primary {
+  padding: 12px 22px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-small {
+  padding: 50px 0;
+}
+
+.section-large {
+  padding: 120px 0;
+}
+
+.section-light {
+  background: #f5f7fa;
+}
+
+/* ========================= */
+/* HAMBURGER */
+/* ========================= */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: #1f2933;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+
+/* animate to X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ========================= */
+/* HAMBURGER */
+/* ========================= */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: #1f2933;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+
+/* animate to X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ========================= */
+/* MOBILE MENU */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 30px;
+    gap: 20px;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    transition: 0.4s cubic-bezier(.22,.61,.36,1);
+    z-index: 1000;
+  }
+
+  .menu.active {
+    right: 0;
+  }
+
+}
+
+@media (max-width: 900px) {
+  .floating-wrapper {
+    flex-direction: column;
+    position: relative;
+    bottom: -40px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+}
+
+/* ============================= */
+/* MOBILE RESPONSIVE STYLES */
+/* ============================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+
+  .container {
+    padding: 0 18px;
+  }
+
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-small {
+    padding: 40px 0;
+  }
+
+  h1 {
+    font-size: 32px !important;
+  }
+
+  h2 {
+    font-size: 26px !important;
+  }
+
+}
+
+
+/* Small Mobile */
+@media (max-width: 480px) {
+
+  .container {
+    padding: 0 16px;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .topbar-left span {
+    display: none; /* hide text */
+  }
+
+  .topbar-left .contact-link.phone {
+    display: none; /* hide phone completely */
+  }
+
+  .topbar-left .contact-link.email span {
+    display: none; /* hide email text */
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .topbar .container {
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .topbar-left,
+  .topbar-right {
+    display: flex;
+    align-items: center;
+  }
+
+}

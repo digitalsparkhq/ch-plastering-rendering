@@ -1,0 +1,211 @@
+---
+import { initTestimonials } from '../scripts/testimonial-slider.js';
+---
+
+<style>
+.testimonials {
+  background: #f5f7fa;
+}
+
+/* wrapper spacing for arrows */
+.testimonial-swiper {
+  padding: 20px 70px 60px;
+  overflow: hidden; /* hides partial slides */
+}
+
+/* equal height slides */
+.swiper-slide {
+  display: flex;
+  height: auto;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 40px 25px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  text-align: center;
+  width: 100%;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.testimonial-fade {
+  position: relative;
+}
+
+/* LEFT FADE */
+.testimonial-fade::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 120px;   /* wider = smoother */
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+
+  background: linear-gradient(
+    to right,
+    #f5f7fa 0%,
+    rgba(245,247,250,0.95) 20%,
+    rgba(245,247,250,0.75) 40%,
+    rgba(245,247,250,0.4) 65%,
+    rgba(245,247,250,0) 100%
+  );
+}
+
+/* RIGHT FADE */
+.testimonial-fade::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+
+  background: linear-gradient(
+    to left,
+    #f5f7fa 0%,
+    rgba(245,247,250,0.95) 20%,
+    rgba(245,247,250,0.75) 40%,
+    rgba(245,247,250,0.4) 65%,
+    rgba(245,247,250,0) 100%
+  );
+}
+
+/* content */
+.review {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.name {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.stars {
+  color: #fbbf24;
+  font-size: 18px;
+}
+
+/* arrows */
+.testimonial-wrapper {
+  position: relative;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+
+  width: 52px;
+  height: 52px;
+  background: white;
+  border-radius: 50%;
+  color: #39AEF4;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+}
+
+/* spacing from cards */
+.swiper-button-prev { left: -30px; }
+.swiper-button-next { right: -30px; }
+
+
+/* remove scrollbar globally inside slider */
+.swiper {
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+
+  .testimonial-card {
+    padding: 25px;
+  }
+
+}
+</style>
+
+<section class="section testimonials">
+
+  <div class="container">
+
+    <h2 style="text-align:center;margin-bottom:40px;">
+      What Our Clients Say
+    </h2>
+
+    <div class="testimonial-wrapper">
+
+      <div class="testimonial-fade">
+        <div class="swiper testimonial-swiper">
+
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="review">Fantastic plastering work. Very professional and tidy.</div>
+                <div class="name">John D.</div>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="review">Highly recommend. Smooth finish and great communication.</div>
+                <div class="name">Sarah M.</div>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="review">Excellent job on our renovation project. Reliable service.</div>
+                <div class="name">Mark T.</div>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="review">Professional from start to finish. Very happy with results.</div>
+                <div class="name">Emma L.</div>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="review">Quick, clean, and high-quality workmanship.</div>
+                <div class="name">David R.</div>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ARROWS OUTSIDE FADE -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+  import { initTestimonials } from '../scripts/testimonial-slider.js';
+
+  window.addEventListener('DOMContentLoaded', initTestimonials);
+</script>
